@@ -24,9 +24,9 @@ class Server {
         //this.io = socketio( this.server, { /* configuraciones */ } );
         this.io = socketio( this.server, {
             cors: {
-                origin: "*",
-                methods: ["GET", "POST"],
-                credentials: true
+                origin: "*"
+                // methods: ["GET", "POST"],
+                // credentials: true
             }
         } );
     }
