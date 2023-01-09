@@ -48,7 +48,7 @@ class Server {
         this.app.use('/api/mensajes', require('../routes/mensajes') );
 
         //Path que tiene adentro el frontend
-        app.get('*', (req, res) => {
+        this.app.get('*', (req, res) => {
             res.sendFile( __dirname + '/public/index.html');
         })
 
