@@ -47,9 +47,10 @@ class Server {
         this.app.use('/api/auth', require('../routes/auth') );
         this.app.use('/api/mensajes', require('../routes/mensajes') );
 
-        //Path que tiene adentro el frontend
+        //Comodin para arreglar el error de rutas en produccion, cualquier ruta que no sean las de arriba las va a servir el index.html.
         this.app.get('*', (req, res) => {
-            res.sendFile('index.html', { root: path.join(__dirname, '../public') });
+            //res.sendFile('index.html', { root: path.join(__dirname, '../public') });
+            res.sendFile( path.join(__dirname, '../public', 'index.html') );
         })
 
     }
