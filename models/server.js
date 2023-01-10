@@ -49,7 +49,7 @@ class Server {
 
         //Path que tiene adentro el frontend
         this.app.get('*', (req, res) => {
-            res.sendFile( __dirname + '/public/index.html');
+            res.sendFile( __dirname + '/public/index.html');   //'../public/index.html'
         })
 
     }
