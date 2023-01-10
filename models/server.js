@@ -34,8 +34,8 @@ class Server {
     middlewares() {
         
         // Desplegar el directorio público
-        this.app.use( express.static( path.resolve( __dirname, '../public' ) ) );
-        //this.app.use( express.static( 'public' ) );
+        //this.app.use( express.static( path.resolve( __dirname, '../public' ) ) );
+        this.app.use( express.static( 'public' ) );
 
         // CORS
         this.app.use( cors() );
@@ -49,7 +49,7 @@ class Server {
 
         //Path que tiene adentro el frontend
         this.app.get('*', (req, res) => {
-            res.sendFile( path.resolve( __dirname + '../public/index.html') );   //'../public/index.html'
+            res.sendFile( __dirname + '/public/index.html');
         })
 
     }
